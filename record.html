@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>动漫の史记</title>
+<link rel="stylesheet" href="css/jquery.fullPage.css">
+<link rel="stylesheet" href="css/style.css">
+
+<script src="js/jquery-1.8.3.min.js"></script>
+<script src="js/jquery-ui-1.10.3.min.js"></script>
+<script src="js/jquery.fullPage.min.js"></script>
+<script>
+$(document).ready(function() {
+	$.fn.fullpage({
+		slidesColor: ['#0075D1', '#C2E5FF', '#FDF6E1', '#E9E9E9', '#F3F3F3', '#F9F3DC'],
+		anchors: ['page1', 'page2', 'page3', 'page4', 'page5', 'page6'],
+		menu: '#menu',
+		afterRender: function(){
+			$('.screen-main span').each(function(){
+				var $rel = $(this).attr('rel');
+				var $arr = $rel.split(',');
+				$(this).animate({
+					left: $arr[2] + 'px',
+					top: $arr[3] + 'px'
+				}, 500);
+			});
+			$('.inner a').each(function(){
+				var $rel = $(this).attr('rel');
+				var $arr = $rel.split(',');
+				$(this).animate({
+					left: $arr[0] + 'px',
+					top: $arr[1] + 'px'
+				}, 500);
+			});
+		},
+		afterLoad: function(anchorLink, index){
+			if(index == 1){
+				$('.screen-main span').each(function(){
+					var $rel = $(this).attr('rel');
+					var $arr = $rel.split(',');
+					$(this).animate({
+						left: $arr[2] + 'px',
+						top: $arr[3] + 'px'
+					}, 500);
+				});
+			}
+			if(index == 2 || index == 3 || index == 4 || index == 5){
+				$('.inner').eq(index - 2).find('a').each(function(){
+					var $rel = $(this).attr('rel');
+					var $arr = $rel.split(',');
+					$(this).animate({
+						left: $arr[2] + 'px',
+						top: $arr[3] + 'px'
+					}, 500);
+				});
+			}
+			if(index == 6){
+				$('.zanzhu-con a').fadeIn(1000);
+			}
+		},
+		onLeave: function(index, direction){
+			if(index == 1){
+				$('.screen-main span').each(function(){
+					var $rel = $(this).attr('rel');
+					var $arr = $rel.split(',');
+					$(this).animate({
+						left: $arr[0] + 'px',
+						top: $arr[1] + 'px'
+					}, 500);
+				});
+			}
+			if(index == 2 || index == 3 || index == 4 || index == 5){
+				$('.inner').eq(index - 2).find('a').each(function(){
+					var $rel = $(this).attr('rel');
+					var $arr = $rel.split(',');
+					$(this).animate({
+						left: $arr[0] + 'px',
+						top: $arr[1] + 'px'
+					}, 500);
+				});
+			}
+			if(index == 6){
+				$('.zanzhu-con a').fadeOut(1000);
+			}
+		}
+	});
+});
+</script>
+
+
+</head>
+
+<body>
+
+<div class="back">
+    <a href="index.html"></a>
+</div>
+
+<ul id="menu">
+	<li data-menuanchor="page1" class="active"><a href="#page1">TOP</a></li>
+	<li data-menuanchor="page2"><a href="#page2">动漫卷</a></li>
+	<li data-menuanchor="page3"><a href="#page3">音乐卷</a></li>
+	<li data-menuanchor="page4"><a href="#page4">声优卷</a></li>
+	<li data-menuanchor="page5"><a href="#page5">游戏卷</a></li>
+	<li data-menuanchor="page6"><a href="#page6">相关网站</a></li>
+</ul>
+
+<div class="section section1">
+	<div class="screen-main">
+		<span class="shi1"  rel="-501,-455,449,245"></span>
+		<span class="shi2"  rel="1387,-359,387,295"></span>
+		<span class="shi3"  rel="-619,-359,381,341"></span>
+		<span class="shi4"  rel="1295,-259,398,441"></span>
+		<span class="ji1"  rel="-328,-589,673,111"></span>
+		<span class="ji2"  rel="1648,-487,648,213"></span>
+		<span class="ji3"  rel="-244,-488,756,212"></span>
+		<span class="slogen"  rel="1462,-106,462,594"></span>
+	</div>
+</div>
+
+<div class="section side1">
+	<div class="science-inner inner">
+		<a class="stiteml st1" href="javascript:void(0)" rel="0,-350,0,7">火影忍者</a>
+		<a class="stiteml st2" href="javascript:void(0)" rel="0,-350,0,37">海贼王</a>
+		<a class="stiteml st3" href="javascript:void(0)" rel="0,-350,0,68">名侦探柯南</a>
+		<a class="stiteml st4" href="javascript:void(0)" rel="0,-350,0,88">死神</a>
+		<a class="stiteml st5" href="javascript:void(0)" rel="1010,116,554,116">CLANNAD</a>
+		<a class="stiteml st6" href="javascript:void(0)" rel="1010,146,554,146">Kanon</a>
+		<a class="stiteml st7" href="javascript:void(0)" rel="1010,163,554,163">Angel Beats!</a>
+		<a class="stiteml st8" href="javascript:void(0)" rel="1010,236,554,236">AIR</a>
+		<a class="stitemr st9" href="javascript:void(0)" rel="-710,346,290,346">玉子市场</a>
+		<a class="stitemr st10" href="javascript:void(0)" rel="-710,376,290,376">轻音少女</a>
+		<a class="stitemr st11" href="javascript:void(0)" rel="-710,406,224,406">中二病也要谈恋爱</a>
+		<a class="stitemr st12" href="javascript:void(0)" rel="-710,433,30,433">凉宫春日的忧郁</a>
+		<a class="stiteml st13" href="javascript:void(0)" rel="761,1050,761,506">钢之炼金术师</a>
+		<a class="stiteml st14" href="javascript:void(0)" rel="761,1050,761,523">野良神</a>
+		<a class="stiteml st15" href="javascript:void(0)" rel="761,1050,761,587">Gosick</a>
+		
+		<a class="stiteml st17" href="javascript:void(0)" rel="761,1050,761,622">血界戦线</a>
+		<a class="stimg1" href="javascript:void(0)" rel="0,-350,0,153"><img width="181" height="166" src="img/sishen.jpg"></a>
+		<a class="stimg2" href="javascript:void(0)" rel="980,2,220,2"><img width="313" height="317" src="img/ab.png"></a>
+		<a class="stimg3" href="javascript:void(0)" rel="-407,350,413,350"><img width="313" height="215" src="img/lianggong.jpg"></a>
+		<a class="stimg4" href="javascript:void(0)" rel="761,850,761,350"><img width="200" height="138" src="img/yeliang.jpg"></a>
+	</div>
+</div>
+
+<div class="section side2">
+	<div class="famous-inner inner">
+		<a class="faitemr fa1" href="javascript:void(0)"  rel="90,-180,90,68">Birth</a>
+		<a class="faitemr fa2" href="javascript:void(0)" rel="90,-180,90,93">英雄</a>
+		<a class="faitemr fa3" href="javascript:void(0)" rel="0,-180,0,113">Anicca</a>
+		<a class="faiteml fa4" href="javascript:void(0)" rel="1280,203,235,203">初音未来的消失</a>
+		<a class="faiteml fa5" href="javascript:void(0)" rel="1280,227,235,227">甩葱歌</a>
+		<a class="faiteml fa6" href="javascript:void(0)" rel="1080,290,235,290">圆周率之歌</a>
+		<a class="faiteml fa7" href="javascript:void(0)" rel="-300,317,100,317,">butter fly</a>
+		<a class="faiteml fa8" href="javascript:void(0)" rel="-300,533,149,533">eternal reality</a>
+		<a class="faiteml fa9" href="javascript:void(0)" rel="-300,563,149,563">sister's noise</a>
+		<a class="faiteml fa10" href="javascript:void(0)" rel="-300,593,149,593">sister's noise</a>
+		<a class="faiteml fa11" href="javascript:void(0)" rel="1370,383,786,383">投食歌</a>
+		<a class="faiteml fa12" href="javascript:void(0)" rel="1370,450,786,450">东京不太热</a>
+		<a class="faiteml fa15" href="javascript:void(0)" rel="1370,540,786,480">权御天下</a>
+		<a class="faimg1" href="javascript:void(0)" rel="200,-180,200,10"><img width="169" height="169" src="img/Anicca.jpg"></a>
+		<a class="faimg2" href="javascript:void(0)" rel="980,77,600,77"><img width="284" height="211" src="img/miku.jpg"></a>
+		<a class="faimg3" href="javascript:void(0)" rel="980,366,290,366"><img width="491" height="328" src="img/luotianyi.png"></a>
+		<a class="faimg4" href="javascript:void(0)" rel="-300,387,149,387"><img width="139" height="86" src="img/baolong.jpg"></a>
+	</div>
+</div>
+<div class="section side3">
+	<div class="social-inner inner">
+		<a class="soiteml so1" href="javascript:void(0)" rel="450,-175,450,51">福山润</a>
+		<a class="soiteml so2" href="javascript:void(0)" rel="450,-175,450,110">樱井孝宏</a>
+		<a class="soiteml so3" href="javascript:void(0)" rel="450,-175,450,140">梶裕贵</a>
+		<a class="soiteml so4" href="javascript:void(0)" rel="980,228,450,228">杉田智和</a>
+		<a class="soiteml so5" href="javascript:void(0)" rel="980,258,450,258">浪川大辅</a>
+		<a class="soiteml so6" href="javascript:void(0)" rel="980,288,450,288">下野纮</a>
+		<a class="soiteml so7" href="javascript:void(0)" rel="980,340,450,340">杉田智和</a>
+		<a class="soiteml so8" href="javascript:void(0)" rel="980,363,450,363">神谷浩史</a>
+		<a class="soiteml so9" href="javascript:void(0)" rel="980,428,450,428">铃木达央</a>
+		<a class="soiteml so10" href="javascript:void(0)" rel="-405,369,162,369">花泽香菜</a>
+		<a class="soiteml so11" href="javascript:void(0)" rel="-405,434,162,434">雨宫天</a>
+		<a class="soiteml so12" href="javascript:void(0)" rel="-405,464,162,464">种田梨沙</a>
+		<a class="soitemr so13" href="javascript:void(0)" rel="15,850,215,520">钉宫理惠</a>
+		<a class="soitemr so14" href="javascript:void(0)" rel="376,1050,376,585">种田梨沙</a>
+		<a class="soitemr so15" href="javascript:void(0)" rel="376,1050,357,612">茅野爱衣</a>
+		<a class="soimg1" href="javascript:void(0)" rel="156,-175,156,10"><img width="270" height="160" src="img/luluxiu.jpg"></a>
+		<a class="soimg2" href="javascript:void(0)" rel="-405,186,155,186"><img width="270" height="165" src="img/tianshi.jpg"></a>
+		<a class="soimg3" href="javascript:void(0)" rel="980,186,675,186"><img width="277" height="166" src="img/aliang.jpg"></a>
+		<a class="soimg4" href="javascript:void(0)" rel="507,850,507,494"><img width="203" height="169" src="img/xiana.jpg"></a>
+	</div>
+</div>
+
+<div class="section silde4">
+	<div class="net-inner inner">
+		<a class="netitemr net1" href="javascript:void(0)" rel="19,-240,19,56">月姬</a>
+		<a class="netitemr net2" href="javascript:void(0)" rel="0,-240,086">喜大普奔</a>
+		<a class="netitemr net3" href="javascript:void(0)" rel="0,-240,116">空之境界</a>
+		<a class="netitemr net4" href="javascript:void(0)" rel="19,-240,19,146">EVA</a>
+		<a class="netiteml net7" href="javascript:void(0)" rel="980,-1,449,-1">空之境界</a>
+		<a class="netiteml net8" href="javascript:void(0)" rel="980,28,449,28">空之轨迹</a>
+		<a class="netiteml net9" href="javascript:void(0)" rel="980,50,449,50">Fate/stay night</a>
+		<a class="netiteml net10" href="javascript:void(0)"  rel="980,116,449,116"> 白色相簿</a>
+		<a class="netiteml net12" a href="javascript:void(0)"  rel="980,184,449,184">舰队collection</a>
+		<a class="netitemr net15" a href="javascript:void(0)" rel="-435,351,8,351">东方project</a>
+		<a class="netimg1" a href="javascript:void(0)" rel="139,-240,139,57"><img width="289" height="178" src="img/fate.jpg"></a>
+		<a class="netimg3" a href="javascript:void(0)" rel="-300,431,45,431"><img width="391" height="220" src="img/dongfang.jpg"></a>
+		<a class="netimg4" a href="javascript:void(0)" rel="451,850,451,267"><img width="270" height="382" src="img/jiandui.jpg"></a>
+	</div>
+</div>
+
+<div class="section silde5">
+	<div class="zanzhu">
+		<h2>相关网站</h2>
+		<div class="zanzhu-con">
+			<a href="http://www.acfun.tv"><img width="180" height="80" src="img/a.png"></a>
+			<a href="http://www.bilibili.com"><img width="180" height="80" src="img/b.png"></a>
+			<a href="http://www.nicovideo.jp"><img width="180" height="80" src="img/niconico.png"></a>
+			<a href="http://bcy.net"><img width="180" height="80" src="img/huitu.png"></a>
+			<a href="http://www.miomio.tv"><img width="180" height="80" src="img/miomio.png"></a>
+			<a href="http://www.linovel.com"><img width="180" height="80" src="img/qingzhiguodu.png"></a>
+			<a href="http://donghua.dmzj.com"><img width="180" height="80" src="img/dongmanzhijia.png"></a>
+			<a href="http://comic.qq.com"><img width="180" height="80" src="img/tengxundongman.png"></a>
+			<a href="http://www.hltm.cc"><img width="180" height="80" src="img/honglv.png"></a>
+			<a href="http://www.pixiv.net"><img width="180" height="80" src="img/pixvi.png"></a>
+			<a href="http://zh.moegirl.org/Mainpage"><img width="180" height="80" src="img/mengniang.png"></a>
+			<a href="http://worldcosplay.net"><img width="180" height="80" src="img/worldcos.png"></a>
+
+		</div>
+		<div class="foot clearfix">
+			<p class="bd">如想投诉，请到<a target="_blank" href="javascript:void(0)">联系站长</a>；如想提出意见、建议，请到<a target="_blank" href="javascript:void(0)">给站长发邮件</a>；本网站的一切资源来自于网络</p>
+			<p class="ft">&copy;2015   Design by <a target="_blank" href="javascript:void(0)">Silence</a>|</p>
+		</div>
+	</div>
+</div>
+
+</body>
+</html>
